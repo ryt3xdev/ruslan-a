@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to right, #d0eaff, #eaf6ff);
+      color: #0a1f44;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 10%;
+      background: linear-gradient(to right, #d0eaff, #eaf6ff);
+    }
+
+    .intro-text {
+      max-width: 500px;
+      flex: 1;
+    }
+
+    .intro-text h1 {
+      font-size: 48px;
+      color: #003d66;
+      margin-bottom: 20px;
+    }
+
+    .intro-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #003d66;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #005999;
+      transform: scale(1.05);
+    }
+
+    .intro-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .intro-img img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .about {
+      margin-bottom: 60px;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #003d66;
+      text-align: center;
+    }
+
+    .about-content {
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .price-item {
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      min-width: 260px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .price-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .price-item h3 {
+      font-size: 28px;
+      color: #003d66;
+      margin-bottom: 10px;
+    }
+
+    .price-item p {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .price-item ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .price-item ul li::before {
+      content: '✔';
+      color: #007acc;
+      margin-right: 8px;
+    }
+
+    .price-item a {
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background-color: #003d66;
+      color: white;
+      border-radius: 25px;
+      transition: 0.3s ease;
+    }
+
+    .price-item a:hover {
+      background-color: #005999;
+      transform: scale(1.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+      max-height: 300px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #003d66;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #005999;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background: #003d66;
+      color: white;
+      text-align: center;
+      padding: 40px 10%;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 60px 5%;
+        text-align: center;
+      }
+
+      .intro-text, .intro-img {
+        max-width: 100%;
+      }
+
+      .pricing {
+        flex-direction: column;
+        align-items: center;
+      }
+      .price-item {
+        width: 100%;
+        max-width: 400px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="intro-text">
+      <h1>Руслан Абдрахманов</h1>
+      <p>Создаю современные и красивые сайты с нуля. Стремлюсь к лучшему UX/UI и адаптивности для любых устройств.</p>
+      <a href="#contact" class="cta-button">Заказать сайт</a>
+    </div>
+    <div class="intro-img">
+      <img src="C:\Users\rusla\OneDrive\Рабочий стол\pngtree-black-laptop-beautiful-laptop-hand-drawn-laptop-cartoon-laptop-png-image_417215-removebg-preview.png" alt="портфолио" />
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>Обо мне</h2>
+    <div class="about-content">
+      <p>Меня зовут Руслан, я фронтенд-разработчик с опытом в HTML, CSS, JavaScript и React. Люблю создавать красивые, быстрые и понятные интерфейсы.
+         Я всегда стремлюсь к качественному коду, отзывчивому дизайну и впечатляющему
+          пользовательскому опыту. Постоянно развиваюсь и изучаю новые технологии,
+           чтобы предлагать своим клиентам современные и надёжные решения. Если вам 
+           нужен адаптивный сайт, лендинг, портфолио или интерфейс — я помогу 
+           реализовать ваш проект быстро и качественно.</p>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="price-item">
+      <h3>Стандартный</h3>
+      <p>20 000 ₸</p>
+      <ul>
+        <li>Простой одностраничный сайт</li>
+        <li>Базовая адаптация под устройства</li>
+        <li>Разработка в течение 3 дней</li>
+        <li>Поддержка 7 дней</li>
+      </ul>
+      <a href="#contact">Связаться</a>
+    </div>
+    <div class="price-item">
+      <h3>Премиум</h3>
+      <p>50 000 ₸</p>
+      <ul>
+        <li>До 5 страниц</li>
+        <li>Анимации и стилизация</li>
+        <li>Полная адаптивность</li>
+        <li>Поддержка 14 дней</li>
+      </ul>
+      <a href="#contact">Связаться</a>
+    </div>
+    <div class="price-item">
+      <h3>Премиум+</h3>
+      <p>100 000 ₸</p>
+      <ul>
+        <li>Многостраничный сайт</li>
+        <li>Индивидуальный дизайн</li>
+        <li>Дополнительный функционал</li>
+        <li>Поддержка 30 дней</li>
+      </ul>
+      <a href="#contact">Связаться</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 style="text-align: center; color: #003d66; margin-bottom: 30px;">Связаться со мной</h2>
+    <form action="https://formspree.io/f/xjkyzvkq" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Ваш email" required>
+      <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+  
+  
+
+  <footer class="footer">
+    <p>© 2025 Руслан Абдрахманов. Все права защищены.</p>
+  </footer>
+</body>
+</html>
